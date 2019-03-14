@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title id="nC"></title>
+
+  <!-- AGREGAR FAVICON -->
+  <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+
+<!-- ARCHIVOS JS DEL PROYECTO --> 
+<script src="./js/datosCliente.js"></script>
+
+<!-- CDN DE SWEET ALERT -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- ARCHIVOS CSS Y JS DEL CHAT --> 
+<link rel="stylesheet" href="./css/chatFacebook/chat_facebook.css" /> 
+<script src="./js/chatFacebook/jquery.min.js"></script>
+<!-- FIN ARCHIVOS CSS Y JS DEL CHAT --> 
+
+<!-- BOTON IR ARRIBA -->
+<script src="./js/irArriba.js"></script>
+<!-- FIN BOTON IR ARRIBA -->
+
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .carousel {
+      height: 100%;
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+    
+
+      <a class="navbar-brand" href="#!">
+        <img src="./img/logoST.png" alt="">
+        <!-- <strong>Fumigaciones SOS</strong> -->
+      </a>
+    
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Mensaje</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">
+              Llamar</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
+          </li> -->
+          <br/>
+          <br/>
+          <li class="nav-item btn-menuu mr-1 ml-5">
+            <a onclick="mensajeCliente()" class="btn btn-menuu rounded mb-5"
+              target="_blank">
+              <i class="fab fa-whatsapp fa-2x mr-2 animated pulse infinite"></i>MENSAJE
+            </a>
+          </li>
+          <br/>
+          <li class="nav-item btn-menuu mr-1 ml-5">  
+            <a onclick="llamarCliente()" class="btn btn-menuu rounded mb-5"
+              target="_blank">
+              <i class="fa fa-phone fa-2x mr-2 animated pulse infinite"></i>LLAMAR
+            </a>
+          </li>
+          <br/>
+            <li class="nav-item btn-menuu mr-1 ml-5">
+              <button onclick="faceCliente()" class="btn btn-menuu rounded mb-5">
+                <i class="fab fa-facebook-f fa-2x mr-2 animated pulse infinite"></i>FACEBOOK
+              </button>
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div class="align-content-end">
+      <button class="logoMV" id="btnSA">
+          <a>
+              <img src="./img/logoMV.png" alt="Mall Virtual" class="animated zoomIn infinite float-right"> 
+            </a>
+      </button>
+      <!-- CODIGO PARA EL BOTON MV LLAMANDO UNA VENTANA SWEET ALERT -->
+      <script>
+      //sweet alert
+      $("#btnSA").click(function(){
+      swal("Bienvenido(a)","Agencia Mall Virtual (6273-3654)");
+      });
+      </script>
+      <!-- FIN DEL CODIGO PARA EL BOTON MV LLAMANDO UNA VENTANA SWEET ALERT -->
+    </div>
+  </nav>
+  <!-- FIN NAVBARr -->
+
+  <!--INICIO DEL CARRUSEL-->
+  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+
+    <!--INICIO DE INDICADORES DE CARRUSEL -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/ FIN DE INDICADORES DE CARRUSEL -->
+
+     <!--/INICIO DE TODOS LOS SLIDE-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--PRIMER SLIDE-->
+      <div class="carousel-item active">
+        <div class="view">
+
+          <!--Video source-->
+          <video class="video-intro" autoplay loop muted>
+            <source src="./media/video1.mp4" type="video/mp4">
+          </video>
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+              
+              <h1 class="mb-4">
+                <strong>
+                  <script>clientes(cliente)</script>
+                </strong>
+              </h1>
+
+              <p>
+                <strong>Envíano un mensaje por Whatsapp</strong>
+              </p>
+
+              <a onclick="mensajeCliente()"class="btn btn-outline-white btn-lg">
+                <i class="fab fa-whatsapp ml-2 fa-3x green-text animated rubberBand infinite">
+                </i><br>
+                <script> clientes(whatsapp);</script>
+              </a>
+
+            </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/PRIMER SLIDE-->
+
+      <!--SEGUNDO SLIDE-->
+      <div class="carousel-item">
+        <div class="view">
+
+          <!--Video source-->
+          <video class="video-intro" autoplay loop muted>
+            <source src="./media/video2.mp4" type="video/mp4">
+          </video>
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                
+                <h1 class="mb-4">
+                    <strong>
+                        <script>clientes(cliente)</script>
+                      </strong>
+                </h1>
+  
+                <p>
+                  <strong>Llámanos. ¡No espere más!</strong>
+                </p>
+
+                <a onclick="llamarCliente()"class="btn btn-outline-white btn-lg">
+                  <i class="fas fa-mobile-alt ml-2 fa-3x primary-color animated rubberBand infinite">
+                  </i><br>
+                  <script> clientes(telCel2);</script>
+                </a>
+
+              </div>
+              <!-- Content -->
+  
+            </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/SEGUNDO SLIDE-->
+
+      <!--TERCER SLIDE-->
+      <div class="carousel-item">
+        <div class="view">
+
+          <!--Video source-->
+          <video class="video-intro" autoplay loop muted>
+            <source src="./media/video3.mp4" type="video/mp4">
+          </video>
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                
+                <h1 class="mb-4">
+                    <strong>
+                        <script>clientes(cliente)</script>
+                      </strong>
+                </h1>
+  
+                <p>
+                    <strong>Llámanos. ¡No espere más!</strong>
+                  </p>
+  
+                  <a onclick="llamarNumFijo()"class="btn btn-outline-white btn-lg">
+                    <i class="fa fa-phone ml-2 fa-3x white-text animated rubberBand infinite">
+                    </i><br>
+                    <script> clientes(telFijo);</script>
+                  </a>
+
+              </div>
+              <!-- Content -->
+  
+            </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/TERCER SLIDE-->
+
+    </div>
+    <!--/FIN DE TODOS LOS SLIDE-->
+
+    <!-- INICIO DE CONTROLES DEL CARRUSEL-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/ FIN DE CONTROLES DEL CARRUSEL-->
+
+  </div>
+  <!--FIN DEL CARRUSEL-->
+
+  <!-- INICIO NOSOTROS -->
+  <main>
+    <div class="container">
+
+      <!-- INICIO DE INFORMACION BASICA DEL CLIENTE-->
+      <section class="mt-5 wow fadeIn">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4 example z-depth-3">
+
+            <img src="./img/cliente/empresa_540x283.jpeg" class="img-fluid z-depth-1-half animated fadeIn"
+              alt="">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+            <!-- Main heading -->
+            <h3 class="h3 mb-3"> 
+              <script>
+              clientes(cliente)  
+              </script> 
+            </h3>
+            <p>
+              <script>
+              clientes(sobremi)  
+              </script>
+            </p>
+            <hr>
+            <p>
+              <script>
+                clientes(dondeVan)  
+              </script>
+            </p>
+            <!-- Main heading -->
+            <hr>
+            <p>
+              <script>
+                clientes(horarioAtencion)  
+              </script>
+            </p>
+
+            <!-- CTA -->
+            <a onclick="mensajeCliente()" class="btn btn-success btn-block animated fadeIn rounded mb-5" target="_blank">
+              <i class="fab fa-whatsapp fa-2x mr-2 animated pulse infinite"></i>MENSAJE
+            </a>
+            <a onclick="llamarNumFijo()" class="btn btn-primary btn-block animated fadeIn rounded mb-5" target="_blank">
+              <i class="fa fa-phone fa-2x mr-2 animated pulse infinite"></i>LLAMAR
+            </a>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!-- FINDE INFORMACION BASICA DEL CLIENTE-->
+<!-- INICIO 1 PARALLAX -->
+<section id="plx">
+  <div class="container">
+  <div class="wtitle text-center text-light">
+      <div>
+          <h2><p>
+            <script>clientes(cliente)</script>
+          </p></h2>
+        </div>
+        <div>
+          <a onclick="mensajeCliente()" class="btn btn-success animated fadeIn rounded mb-5" target="_blank">
+              <i class="fab fa-whatsapp fa-3x mr-2 animated pulse infinite"></i>
+          </a>
+          <a onclick="llamarNumFijo()" class="btn btn-primary animated fadeIn rounded mb-5" target="_blank">
+              <i class="fa fa-phone fa-3x mr-2 animated pulse infinite"></i>
+          </a>
+        </div>
+  </div>
+  </div>
+</section>
+<!-- FIN 1 PARALLAX -->
+<div style="padding-top: 20px;">
+
+</div>
+
+      <!--Section: Main features & Quick Start-->
+      <section class=" wow fadeInUp">
+
+        <h3 class="h3 text-center mb-5">Campos de acción</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 px-4">
+
+            <!-- RESIDENCIAS-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-home fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Residencias</h5>
+                <p class="grey-text">Con gusto atendemos en su residencia cualquier problema de tuberías taqueadas y limpieza de tanques sépticos.
+                <br/>
+                Siempre recomendamos una limpieza del tanque séptico una vez cada dos años. Esto prolongará la vida util de su material y funcionamiento.
+                </p>
+              </div>
+            </div>
+            <!--/ RESIDENCIAS-->
+
+            <div style="height:30px"></div>
+
+            <!-- COMERCIO -->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-building fa-2x blue-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Empresas</h5>
+                <p class="grey-text">
+                  Visitamos cualquier empresa del país, para realizar destaqueos de tubería y/o limpieza de tanques sépticos.<br/>
+                  Recomendamos que en periodos semestrales se realicen limpieza de tanques sépticos, esto si son de uso público o de mayor frecuencia.
+                </p>
+              </div>
+            </div>
+            <!--/ COMERCIO -->
+
+            <div style="height:30px"></div>
+
+            <!--ZONAS VERDES-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-church fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Otros</h5>
+                <p class="grey-text">
+                  Visitamos bodegas, gimnasios, salones comunales, entre otros. Para cualquier necesidad de destaqueo de tuberías o bien de limpieza de tanques sépticos.
+                </p>
+              </div>
+            </div>
+            <!--/ FIN ZONAS VERDES-->
+
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12  wow fadeInUp">
+
+            <p class="h5 text-center mb-4">Siempre listos para servirles</p>
+            <div>
+              <!-- https://www.youtube.com/watch?v=yHyj6o56AlM -->
+              
+              <video controls muted loop width="100%" poster="img/imagenVideo1.jpg">
+              <source src="./media/videoServicios1.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/Grid row-->
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+
+      <hr class="my-5">
+
+<!-- INICIO 2 PARALLAX -->
+<section id="plx2">
+  <div class="container">
+  <div class="wtitle text-center text-light">
+  <div>
+    <h2><p>
+      <script>clientes(cliente)</script>
+    </p></h2>
+  </div>
+  <div>
+    <a onclick="mensajeCliente()" class="btn btn-success animated fadeIn rounded mb-5" target="_blank">
+        <i class="fab fa-whatsapp fa-3x mr-2 animated pulse infinite"></i>
+    </a>
+    <a onclick="llamarNumFijo()" class="btn btn-primary animated fadeIn rounded mb-5" target="_blank">
+        <i class="fa fa-phone fa-3x mr-2 animated pulse infinite"></i>
+    </a>
+  </div>
+  </div>
+  </div>
+</section>
+<!-- FIN 2 PARALLAX -->
+
+<hr class="my-5">
+
+      <!--Section: Not enough-->
+<div class="container  wow fadeInUp">
+      <section>
+
+        <h2 class="my-5 h3 text-center">Nuestros servicios</h2>
+
+        <!--First row-->
+        <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+          <!--First column-->
+<div class="col-md-6">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>        
+              <div class="col-10">
+                <h3 class="feature-title">Destaqueos de Tuberías</h3>
+                <p class="grey-text">Tanto en zonas urbanas como rurales las residencias y comercio en general, sufren de problemas de bloqueos u obstrucciones en los desagues. Esto ocasiona malos olores y enposamientos dentro de las edificaciones. Nuestra recomendación es contratar a un profesional para que realice la inspección, que con el equipo y el conocimiento adecuado logre el objetivo de eliminar la obtrucción sin dañar la tubería.
+                </p>
+                <!-- <div style="height:15px"></div> -->
+                <img src="./img/cliente/1.jpg" alt="" class="img-fluid z-depth-1-half ">
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->       
+
+</div>              
+            <hr class="my-5">
+            
+            <!-- SEGUNDA COLUMNA -->
+<div class="col-md-6">          
+
+            <!--First row-->
+            <div class="row">
+                <div class="col-2">
+                  <i class="fas fa-check-circle fa-2x indigo-text"></i>
+                </div>        
+                <div class="col-10">
+                  <h3 class="feature-title">Limpieza de Tanques Sépticos</h3>
+                  <p class="grey-text">Para la evacuación de su tanque séptico contamos con el equipo necesario para brindarle un excelente servicio, tenemos el equipo vehícular y mangueras para tanques de difícil acceso. 
+                  El mantenimiento de limpieza de tanques sépticos debe ser cada dos años para residencias y para locales comerciales de uso constante (hoteles, restaurantes, etc), es recomendable cada seis meses.
+                  </p>
+                  <!-- <div style="height:15px"></div> -->
+                  <img src="./img/cliente/2.jpg" alt="" class="img-fluid z-depth-1-half ">
+                  <div style="height:15px"></div>
+                </div>
+              </div>
+
+</div>
+
+<!-- FIN DE LA SEGUNDA COLUMNA -->
+
+      </section>
+</div>
+      <!--Section: Not enough-->
+
+     </div>
+  </main>
+  <!-- FIN NOSOTROS -->
+
+<!-- BOTON IR ARRIBA -->
+<section>
+  <div class="ir-arriba animated fadeIn infinite">
+    <img src="./img/move-top.svg" alt="">
+  </div>
+</section>
+<!-- FIN BOTON IR ARRIBA -->
+  
+  <!--Footer-->
+
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+   
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a onclick="faceCliente()" target="_blank">
+        <i class="fab fa-facebook-f mr-3 fa-2x"></i>
+      </a>
+<br/>
+<br/>
+<br/>
+
+<p>Correo electrónico:</p>
+
+        <a>
+          <i class="fas fa-develope fa-2x mr-2 animated pulse infinite"></i>
+          <script>clientes(email)</script>
+        </a>
+
+      <!-- <a onclick="twitterCliente()" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
+      <a onclick="youtubeCliente()" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+
+      <a onclick="googlePlusCliente()" target="_blank">
+        <i class="fab fa-google-plus-g mr-3"></i>
+      </a> -->
+
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 margenes">
+      <p>© 2019 | <a onclick="urlEmpresa()">
+      <script>clientes(empresa);</script>
+      </a></p>
+      <img src="./img/logoMV.png" alt="Mall Virtual" class="animated zoomIn infinite">
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+  
+  <!-- CHAT FACEBOOK -->
+  <section class="chat-container">
+      <div class="chat-button text-center">Abra/Cierre el Chat
+        <i class="fab fa-facebook-square"></i> 
+         <p class="margin-button"><script>clientes(cliente)</script></p>
+      </div>
+
+      <div class="chat-content">
+      
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FASISTENCIA-MAORSA-SOLUCIONES-239560154786%2F&tabs=messages&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=292986951349343" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        
+  </section>
+  <!-- FIN CHAT FACEBOOK -->
+
+<!-- CHAT FACEBOOK -->
+<script src="./js/chatFacebook/chat_facebook.js"></script>
+<!-- FIN CHAT FACEBOOK -->
+
+
+  <!-- SCRIPTS -->
+
+
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+
+
+
+
+</body>
+
+</html>
